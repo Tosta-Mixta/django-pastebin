@@ -1,4 +1,4 @@
-### A Django based pastebin.
+# A Django based pastebin.
 ## Description
 A project forked from [Agiliq - Django PasteBin](https://github.com/agiliq/django-pastebin)
 
