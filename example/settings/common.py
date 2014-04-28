@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 # Django settings for pastebin project.
 
 import os
@@ -128,11 +129,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+    'crispy_forms',
     # Uncomment the next line to enable the admin:
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'gunicorn',
 )
+
+# Template used by crispy form
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -1,53 +1,10 @@
-/* - CSS  for bootstrap - */
 body {
   padding-top: 50px;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
-}
-/* ---------------------- */
-
-#header {
-    background-color: black;
-    color: white;
-    
-}
-#header h1{
-    margin:10px;
-    border-left:5px #FFDF00 double;
-    padding:10px;
-    font-family:"Courier New", Courier, monospace;
-}
-#footer{
-    text-align: center;
-    
-}
-#container{
-    background-color: lightgrey;
-}
-
-#pastetext {
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
-h3 , #info{
-    margin-left: 10px;
-}
-.linenos pre{
-    background-color: grey;
-    padding: 1px 1px 1px 1px;
-}
-.language{
-    font-weight: bold;
-    float: left;
-}
-.choices a{
-    padding-left: 5px;
-}
-#help{
-    margin-left: 10px;
 }
 
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -98,10 +55,8 @@ h3 , #info{
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol
-*/
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
 .highlight .sr { color: #BB6688 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
