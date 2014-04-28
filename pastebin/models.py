@@ -3,11 +3,11 @@ from django.db import models
 
 
 class CodePaste(models.Model):
-    text = models.TextField()
-    htmld_text = models.TextField()
-    language = models.CharField(max_length=30)
     title = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
+    language = models.CharField(max_length=30)
+    text = models.TextField()
+    htmld_text = models.TextField()
     created_on = models.DateField(auto_now_add=1)
 
     @models.permalink
