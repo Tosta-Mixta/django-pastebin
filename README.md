@@ -15,7 +15,7 @@ or
 
 ### Run application
 
-	python manage.py gunicorn
+	python manage.py run_gunicorn
 
 #### License
 
