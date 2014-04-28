@@ -49,7 +49,7 @@ def htmlize(text, language):
     elif language == 'Html':
         from pygments.lexers.templates import HtmlLexer as Lexer
     else:
-        from pygments.lexers. import TextLexer as Lexer
+        from pygments.lexers.special import TextLexer as Lexer
     """
     Todo: I cant get this to work.
     lang_lexer = str(language + 'Lexer')
