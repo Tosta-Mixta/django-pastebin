@@ -1,0 +1,8 @@
+<h1>Paste List</h1>
+<ul>
+    {% for item in object_list %}
+        <li>{{ item.created_on|date }} - {{ item.title }}</li>
+    {% empty %}
+        <li>No item yet.</li>
+    {% endfor %}
+</ul>

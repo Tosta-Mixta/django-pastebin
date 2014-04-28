@@ -50,7 +50,6 @@ def htmlize(text, language):
         from pygments.lexers.templates import HtmlLexer as Lexer
     else:
         from pygments.lexers.special import TextLexer as Lexer
-    from pygments.lexers import get_lexer_by_name
-    Lexer = get_lexer_by_name(language.lower())
+
     htmld = highlight(text, Lexer(), Formatter(linenos='table'))
     return htmld

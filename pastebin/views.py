@@ -3,10 +3,23 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.views.generic.base import View
-
+from django.views.generic import ListView
 from .forms import PasteForm
-
 from .models import CodePaste
+from django.utils import timezone
+
+
+class PasteList(ListView):
+    """
+    Display a list of pages previously created.
+    """
+    model = CodePaste
+    template_name = 'djpaste/listPaste.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PasteList, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
 
 
 class FormIndex(View):
