@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django import forms
 from .models import CodePaste
 
@@ -14,7 +15,7 @@ class PasteForm(forms.Form):
     language = forms.ChoiceField(lang_names, required=False)
     title = forms.CharField(required=False, max_length=60, 
                             widget=forms.TextInput(attrs={'size': 50}))
-    name = forms.CharField(max_length=60, 
+    name = forms.CharField(max_length=60,
                             widget=forms.TextInput(attrs={'size': 50}), required=False)
     
     def save(self):
@@ -24,4 +25,3 @@ class PasteForm(forms.Form):
                             name=self.cleaned_data['name'])
         snippet.save()
         return snippet
-        

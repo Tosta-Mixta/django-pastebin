@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django.db import models
 
 
@@ -30,25 +31,25 @@ class CodePaste(models.Model):
     
 def htmlize(text, language):
     from pygments import highlight
-    from pygments.formatters import HtmlFormatter as Formatter
+    from pygments.formatters.html import HtmlFormatter as Formatter
     if language == 'Python':   
-        from pygments.lexers import PythonLexer as Lexer
+        from pygments.lexers.parsers import PythonLexer as Lexer
     elif language == 'Perl':
-        from pygments.lexers import PerlLexer as Lexer
+        from pygments.lexers.parsers import PerlLexer as Lexer
     elif language == 'Ruby':
-        from pygments.lexers import RubyLexer as Lexer
+        from pygments.lexers.parsers import RubyLexer as Lexer
     elif language == 'PythonConsole':
-        from pygments.lexers import PythonConsoleLexer as Lexer
+        from pygments.lexers.agile import PythonConsoleLexer as Lexer
     elif language == 'PythonTraceback':
-        from pygments.lexers import PythonTracebackLexer as Lexer
+        from pygments.lexers.agile import PythonTracebackLexer as Lexer
     elif language == 'RubyConsole':
-        from pygments.lexers import RubyConsoleLexer as Lexer
+        from pygments.lexers.agile import RubyConsoleLexer as Lexer
     elif language == 'HtmlDjango':
-        from pygments.lexers import HtmlDjangoLexer as Lexer
+        from pygments.lexers.templates import HtmlDjangoLexer as Lexer
     elif language == 'Html':
-        from pygments.lexers import HtmlLexer as Lexer
+        from pygments.lexers.templates import HtmlLexer as Lexer
     else:
-        from pygments.lexers import TextLexer as Lexer
+        from pygments.lexers. import TextLexer as Lexer
     """
     Todo: I cant get this to work.
     lang_lexer = str(language + 'Lexer')
@@ -59,4 +60,3 @@ def htmlize(text, language):
     """
     htmld = highlight(text, Lexer(), Formatter(linenos='table'))
     return htmld
-    
