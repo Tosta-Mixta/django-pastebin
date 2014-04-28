@@ -11,6 +11,6 @@ urlpatterns = patterns('pastebin.views',
                        url(r'^plain/(?P<id>\d+)/$', 'plain', name='djpaste_plain'),
                        url(r'^html/(?P<id>\d+)/$', 'html', name='djpaste_html'),)
 
-urlpatterns += patterns('',
-                        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-                         {'document_root': settings.STATIC_ROOT}),)
+#urlpatterns += patterns('',
+#                        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+#                         {'document_root': settings.STATIC_ROOT}),)
