@@ -12,15 +12,15 @@ class CodePaste(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('pastebin.views.paste_details', [self.id])
+        return 'pastebin.views.paste_details', [self.id]
     
     @models.permalink
     def get_plain_url(self):
-        return ('pastebin.views.plain', [self.id])
+        return 'pastebin.views.plain', [self.id]
     
     @models.permalink
     def get_html_url(self):
-        return ('pastebin.views.html', [self.id])
+        return 'pastebin.views.html', [self.id]
     
     def save(self, *args, **kwargs):
         """Htmlize text and save to htmld_text. Use Pygments"""
