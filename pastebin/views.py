@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
@@ -29,7 +29,7 @@ class FormIndex(View):
     payload = {'form': 'form'}
 
     def get(self, request, *args, **kwargs):
-        
+
         try:
             self.initial['language'] = request.session['language']
             self.initial['name'] = request.session['name']
@@ -48,26 +48,33 @@ class FormIndex(View):
             request.session['name'] = form.cleaned_data['name']
             return HttpResponseRedirect(paste.get_absolute_url())
 
+
 index = FormIndex.as_view()
+
 
 class PasteDetails(View):
     def get(self, request, id):
         paste = get_object_or_404(CodePaste, id=id)
-        payload = {'paste':paste}
+        payload = {'paste': paste}
         return render_to_response('djpaste/details.html', payload, RequestContext(request))
 
+
 paste_details = PasteDetails.as_view()
+
 
 class Plain(View):
     def get(self, request, id):
         paste = get_object_or_404(CodePaste, id=id)
         return HttpResponse(paste.text, mimetype="text/plain")
 
+
 plain = Plain.as_view()
+
 
 class Html(View):
     def get(self, request, id):
         paste = get_object_or_404(CodePaste, id=id)
         return HttpResponse(paste.htmld_text, mimetype="text/plain")
+
 
 html = Html.as_view()
